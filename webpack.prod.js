@@ -9,7 +9,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config = require('./webpack.config.js');
 
 // Override properties from the base config as needed
-config.output.filename = '[name].[chunkhash].bundle.js';
+config.output.filename = 'js/[name].[chunkhash].bundle.js';
 config.devtool = 'source-map';
 
 config.plugins = [
@@ -20,11 +20,11 @@ config.plugins = [
   }),
   new webpack.optimize.CommonsChunkPlugin({
     name: 'vendor',
-    filename: '[name].[chunkhash].bundle.js',
+    filename: 'js/[name].[chunkhash].bundle.js',
     minChunks: x => x.context && x.context.indexOf('node_modules') >= 0
   }),
   new ExtractTextPlugin({
-    filename: '[name].[chunkhash].bundle.css',
+    filename: 'css/[name].[chunkhash].bundle.css',
     allChunks: true
   }),
   new webpack.optimize.UglifyJsPlugin({

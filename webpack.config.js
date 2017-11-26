@@ -13,7 +13,7 @@ module.exports = {
   output: {
     publicPath: '/',
     path: path.resolve('dist'),
-    filename: '[name].bundle.js'
+    filename: 'js/[name].bundle.js'
   },
   module: {
     loaders
@@ -33,11 +33,11 @@ module.exports = {
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      filename: '[name].bundle.js',
+      filename: 'js/[name].bundle.js',
       minChunks: x => x.context && x.context.indexOf('node_modules') >= 0
     }),
     new ExtractTextPlugin({
-      filename: '[name].bundle.css',
+      filename: 'css/[name].bundle.css',
       allChunks: true
     }),
     new DashboardPlugin(),
