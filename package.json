@@ -19,8 +19,8 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "start": "webpack-dashboard -- webpack-dev-server --watch-poll",
-    "simple": "webpack-dev-server --watch-poll --progress",
+    "start": "webpack-dev-server --progress --watch-poll --open",
+    "console": "webpack-dashboard -- webpack-dev-server --watch-poll",
     "build": "webpack --progress --colors",
     "build-prod": "webpack --progress --colors --config webpack.prod.js"
   },

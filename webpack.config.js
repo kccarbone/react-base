@@ -26,7 +26,8 @@ module.exports = {
     contentBase: './public',
     historyApiFallback: true,
     inline: true,
-    port: 9090
+    port: 9090,
+    stats: 'minimal'
   },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
