@@ -1,5 +1,4 @@
-module.exports = ExtractTextPlugin =>
-[
+module.exports = ExtractTextPlugin => [
   {
     test: /\.jsx?$/,
     exclude: /(node_modules|bower_components)/,
@@ -22,38 +21,23 @@ module.exports = ExtractTextPlugin =>
     })
   },
   {
-    test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+    test: /\.(eot|svg|ttf|woff|woff2|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
     exclude: /(node_modules|bower_components)/,
-    use: 'file-loader'
-  },
-  {
-    test: /\.(woff|woff2)$/,
-    exclude: /(node_modules|bower_components)/,
-    use: 'url-loader?prefix=font/&limit=5000'
-  },
-  {
-    test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-    exclude: /(node_modules|bower_components)/,
-    use: 'url-loader?limit=10000&mimetype=application/octet-stream'
-  },
-  {
-    test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-    exclude: /(node_modules|bower_components)/,
-    use: 'url-loader?limit=10000&mimetype=image/svg+xml'
+    use: 'file-loader?name=fonts/[name].[ext]'
   },
   {
     test: /\.gif/,
     exclude: /(node_modules|bower_components)/,
-    use: 'url-loader?limit=10000&mimetype=image/gif'
+    use: 'url-loader?name=img/[hash].[ext]&limit=10000&mimetype=image/gif'
   },
   {
     test: /\.jpg/,
     exclude: /(node_modules|bower_components)/,
-    use: 'url-loader?limit=10000&mimetype=image/jpg'
+    use: 'url-loader?name=img/[hash].[ext]&limit=10000&mimetype=image/jpg'
   },
   {
     test: /\.png/,
     exclude: /(node_modules|bower_components)/,
-    use: 'url-loader?limit=10000&mimetype=image/png'
+    use: 'url-loader?name=img/[hash].[ext]&limit=10000&mimetype=image/png'
   }
 ];

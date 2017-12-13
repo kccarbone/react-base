@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const DashboardPlugin = require('webpack-dashboard/plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const loaders = require('./webpack.loaders')(ExtractTextPlugin);
 
@@ -40,7 +39,6 @@ module.exports = {
       filename: 'css/[name].bundle.css',
       allChunks: true
     }),
-    new DashboardPlugin(),
     new CopyWebpackPlugin([{
       context: 'public',
       from: '**/*'
